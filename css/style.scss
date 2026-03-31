@@ -1,0 +1,234 @@
+@charset "UTF-8";
+@use 'mixin' as m;
+
+body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+img {
+    vertical-align: bottom;
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 525px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+
+    @include m.tab {
+        max-width: 768px;
+    }
+}
+
+.cta-area {
+    position: relative;
+
+    .cta-btn {
+        position: absolute;
+        top: 32%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 20px;
+        width: 100%;
+
+        @include m.sp {
+            padding: 0 20px;
+        }
+
+        img {
+            width: 100%;
+            filter: drop-shadow(0px 4px 4px rgb(209, 207, 207, 1.0));
+        }
+    }
+
+    .sec01 & {
+        .cta-btn {
+            top: 37%;
+        }
+    }
+}
+
+.accordion-item {
+    width: 100%;
+
+    .accordion-header {
+        cursor: pointer;
+
+        .btn-opened {
+            display: none;
+        }
+
+        .btn-closed {
+            display: block;
+        }
+
+        &.is-active {
+            .btn-opened {
+                display: block;
+            }
+
+            .btn-closed {
+                display: none;
+            }
+        }
+    }
+
+    .accordion-content {
+        display: none;
+        overflow: hidden;
+        cursor: pointer;
+    }
+}
+
+
+.sec01 {}
+
+.sec02 {}
+
+.sec03 {}
+
+.sec04 {
+    .slick {
+        .slider {
+            .slide {
+                padding: 0 20px;
+            }
+
+            .prev-arrow {
+                height: 30px;
+                width: 30px;
+                background: url(../img/arrow.png);
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            .next-arrow {
+                height: 30px;
+                width: 30px;
+                background: url(../img/arrow.png);
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%) rotate(180deg);
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            .slick-dots {
+                bottom: -20px;
+
+                li {
+                    margin: 0 10px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+
+                    button {
+                        &::before {
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background: #999999;
+                            opacity: 1;
+                        }
+                    }
+
+                    &.slick-active {
+                        button {
+                            &::before {
+                                content: '';
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background: #e6877f;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .slick-active {
+                    &::before {
+                        content: '';
+                        width: 50px;
+                        height: 5px;
+                        background: #333;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sec05 {
+    background-color: #3e4d54;
+
+
+
+}
+
+.sec06 {}
+
+.sec07 {}
+
+.sec08 {}
+
+.sec09 {}
+
+.sec10 {}
+
+
+footer {
+    .container {
+        .fixedbtn {
+            border-radius: 999px;
+            position: fixed;
+            z-index: 100;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            // max-width: 525px;
+            max-width: calc(525px - 40px);
+            width: calc(100% - 40px);
+
+            &::after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                border-radius: 999px;
+                background-color: #ffffff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            @include m.tab {
+                max-width: 768px;
+            }
+        }
+    }
+}
