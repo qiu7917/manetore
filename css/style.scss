@@ -134,61 +134,11 @@ li {
                 z-index: 10;
                 cursor: pointer;
             }
-
-            .slick-dots {
-                bottom: -20px;
-
-                li {
-                    margin: 0 10px;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-
-                    button {
-                        &::before {
-                            content: '';
-                            width: 10px;
-                            height: 10px;
-                            border-radius: 50%;
-                            background: #999999;
-                            opacity: 1;
-                        }
-                    }
-
-                    &.slick-active {
-                        button {
-                            &::before {
-                                content: '';
-                                width: 10px;
-                                height: 10px;
-                                border-radius: 50%;
-                                background: #e6877f;
-                                opacity: 1;
-                            }
-                        }
-                    }
-                }
-
-                .slick-active {
-                    &::before {
-                        content: '';
-                        width: 50px;
-                        height: 5px;
-                        background: #333;
-                        opacity: 1;
-                    }
-                }
-            }
         }
     }
 }
 
-.sec05 {
-    background-color: #3e4d54;
-
-
-
-}
+.sec05 {}
 
 .sec06 {}
 
@@ -200,6 +150,14 @@ li {
 
 .sec10 {}
 
+.sec11 {}
+
+.sec12 {}
+
+.sec13 {}
+
+.sec14 {}
+
 
 footer {
     .container {
@@ -210,7 +168,6 @@ footer {
             bottom: 8px;
             left: 50%;
             transform: translateX(-50%);
-            // max-width: 525px;
             max-width: calc(525px - 40px);
             width: calc(100% - 40px);
 
@@ -228,6 +185,7 @@ footer {
 
             @include m.tab {
                 max-width: 768px;
+                bottom: 5px;
             }
         }
     }
